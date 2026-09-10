@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-background: #050505; /*[cite: 1] */
+  --color-surface: #0D0D0F; /*[cite: 1] */
+  --color-surface-light: #151519; /*[cite: 1] */
+  --color-primary: #8B5CF6; /*[cite: 1] */
+  --color-primary-light: #A78BFA; /*[cite: 1] */
+  --color-accent: #22D3EE; /*[cite: 1] */
+  --color-main-text: #F5F5F5; /*[cite: 1] */
+  --color-muted-text: #8A8A93; /*[cite: 1] */
+  --color-ui-border: rgba(255, 255, 255, 0.08); /*[cite: 1] */
+
+  /* Fonts */
+  --font-sans: "Inter", sans-serif; /*[cite: 1] */
+
+  /* Spacing */
+  --spacing-section: 96px; /*[cite: 1] */
+
+  /* Border Radius */
+  --radius-sm: 8px; /*[cite: 1] */
+  --radius-md: 12px; /*[cite: 1] */
+  --radius-lg: 20px; /*[cite: 1] */
+  --radius-xl: 28px; /*[cite: 1] */
+  --radius-pill: 9999px; /*[cite: 1] */
+}
+
+/* Base Styles */
+body {
+  background-color: var(--color-background);
+  color: var(--color-main-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Utility Classes */
+.bg-primary-gradient {
+  background: linear-gradient(135deg, #8B5CF6 0%, #22D3EE 100%); /*[cite: 1] */
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #8B5CF6 0%, #22D3EE 100%); /*[cite: 1] */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03); /*[cite: 1] */
+  border: 1px solid rgba(255, 255, 255, 0.08); /*[cite: 1] */
+  border-radius: 20px; /*[cite: 1] */
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.05); /*[cite: 1] */
+  border-color: rgba(255, 255, 255, 0.12); /*[cite: 1] */
+  transform: translateY(-4px); /*[cite: 1] */
+}
