@@ -1,0 +1,1225 @@
+NEXORA — DEVHESHMATI PORTFOLIO LANDING PAGE
+Design System + Wireframe Specification
+Project Stack: Nuxt / TailwindCSS / GSAP / TypeScript
+
+==================================================
+1. PROJECT OVERVIEW
+==================================================
+
+Project:
+NEXORA — AI Automation Studio
+
+Positioning:
+AI Automation for modern businesses.
+
+Purpose:
+This is the first professional landing-page project for the DevHeshmati portfolio. It is designed to demonstrate the ability to build premium, modern, responsive landing pages for real clients.
+
+The project should feel like a premium technology/AI startup website, combining:
+- Minimalism
+- Futuristic visual language
+- Technical aesthetics
+- Strong typography
+- High contrast
+- Smooth motion
+- Generous whitespace
+- Professional conversion-focused UX
+
+Visual direction:
+Premium + Technical + Minimal + Futuristic + Intelligent + Confident
+
+Design inspiration level:
+Modern SaaS / AI startup / premium technology products.
+The design must remain original and must not directly copy another website.
+
+
+==================================================
+2. TECHNOLOGY STACK
+==================================================
+
+Core:
+- Nuxt
+- Vue
+- TypeScript
+- TailwindCSS
+- GSAP
+- GSAP ScrollTrigger
+
+Recommended responsibilities:
+
+TailwindCSS:
+- Layout
+- Responsive design
+- Spacing
+- Typography
+- Colors
+- Basic transitions
+- Grid
+- Flexbox
+
+Vue / Nuxt:
+- Component architecture
+- State
+- Interactive UI
+- Mobile navigation
+- FAQ accordion
+- Dynamic content
+
+GSAP:
+- Scroll animations
+- Section reveals
+- Stagger animations
+- Counters
+- Parallax
+- SVG path animations
+- Complex animation timelines
+- Showcase interactions
+
+CSS:
+- Simple hover states
+- Basic transitions
+- Gradients
+- Blur
+- Glow
+- Static visual effects
+
+
+==================================================
+3. DESIGN SYSTEM
+==================================================
+
+3.1 COLOR SYSTEM
+----------------
+
+Background:
+#050505
+
+Surface:
+#0D0D0F
+
+Surface Light:
+#151519
+
+Primary:
+#8B5CF6
+
+Primary Light:
+#A78BFA
+
+Accent:
+#22D3EE
+
+Main Text:
+#F5F5F5
+
+Muted Text:
+#8A8A93
+
+Border:
+rgba(255,255,255,0.08)
+
+Primary Gradient:
+linear-gradient(135deg, #8B5CF6 0%, #22D3EE 100%)
+
+Color roles:
+- Purple is the primary brand color.
+- Cyan represents technology, data, and intelligent systems.
+- Purple should dominate the visual identity.
+- Cyan should be used selectively as a secondary accent.
+- Gradients should be used as accents rather than covering the entire interface.
+
+
+==================================================
+3.2 TYPOGRAPHY
+==================================================
+
+Primary font:
+Inter
+
+Typography scale:
+
+Display:
+64px / 72px
+Weight: 700
+
+H2:
+48px / 56px
+Weight: 700
+
+H3:
+32px / 40px
+Weight: 600
+
+H4:
+24px / 32px
+Weight: 600
+
+Body Large:
+20px / 32px
+Weight: 400
+
+Body:
+16px / 26px
+Weight: 400
+
+Small:
+14px / 22px
+Weight: 400
+
+Caption:
+12px / 18px
+Weight: 500
+
+Mobile typography:
+
+Display:
+40px / 44px
+
+H2:
+32px / 38px
+
+H3:
+24px / 30px
+
+Typography principles:
+- Large headings should feel bold and confident.
+- Body text should remain highly readable.
+- Avoid excessive font weights.
+- Maintain strong hierarchy between heading, supporting text, and CTA.
+
+
+==================================================
+3.3 SPACING SYSTEM
+==================================================
+
+Allowed spacing scale:
+
+4
+8
+12
+16
+24
+32
+48
+64
+80
+96
+128
+
+Default principles:
+- Avoid random spacing values.
+- Prefer the predefined spacing scale.
+- Maintain consistent vertical rhythm.
+
+Recommended values:
+
+Section padding:
+96px
+
+Card padding:
+24px
+
+Card gap:
+24px
+
+Heading to paragraph:
+16px
+
+Paragraph to CTA:
+32px
+
+Large visual separation:
+80–128px
+
+
+==================================================
+3.4 CONTAINER
+==================================================
+
+Maximum content width:
+1280px
+
+Horizontal padding:
+24px
+
+Concept:
+
+viewport
+------------------------------------------------
+
+          max-width: 1280px
+       |----------------------|
+       |      content         |
+       |----------------------|
+
+------------------------------------------------
+
+All major sections should share the same horizontal alignment.
+
+
+==================================================
+3.5 GRID
+==================================================
+
+Desktop:
+12-column grid
+
+Tablet:
+8-column grid
+
+Mobile:
+4-column grid
+
+Bento layouts should primarily use CSS Grid.
+
+
+==================================================
+3.6 BORDER RADIUS
+==================================================
+
+Small:
+8px
+
+Medium:
+12px
+
+Large:
+20px
+
+Extra Large:
+28px
+
+Pill:
+9999px
+
+Usage:
+- Buttons: 12px
+- Standard cards: 20px
+- Large visual cards: 28px
+- Badges: 9999px
+
+
+==================================================
+3.7 CARD SYSTEM
+==================================================
+
+Base card:
+
+background:
+rgba(255,255,255,0.03)
+
+border:
+1px solid rgba(255,255,255,0.08)
+
+border-radius:
+20px
+
+padding:
+24px
+
+Card hover:
+- Slightly brighter background
+- Slightly brighter border
+- translateY(-4px)
+- Smooth 200–300ms transition
+
+Card variants:
+- GlassCard
+- FeatureCard
+- ServiceCard
+- TestimonialCard
+- StatCard
+
+
+==================================================
+3.8 BUTTON SYSTEM
+==================================================
+
+Primary button:
+
+Text:
+Start a Project →
+
+Properties:
+- Height: 52px
+- Horizontal padding: 24px
+- Border radius: 12px
+- Font size: 15px
+- Font weight: 600
+- Primary gradient background
+
+Primary hover:
+- translateY(-2px)
+- Slight brightness increase
+- Subtle glow
+
+Secondary button:
+
+Text:
+Explore Solutions →
+
+Properties:
+- Transparent background
+- Subtle border
+- Same height and radius as primary
+- Light text
+
+Buttons should have clear visual hierarchy and strong accessibility.
+
+
+==================================================
+3.9 BACKGROUND SYSTEM
+==================================================
+
+Base:
+#050505
+
+Grid background:
+- Very subtle grid
+- Extremely low opacity
+- Used selectively in hero or large visual areas
+
+Glow:
+- Purple blurred orb
+- Cyan blurred orb
+- Large radial gradients
+- Used sparingly
+
+Glass effect:
+- Transparent white surface
+- backdrop blur
+- subtle border
+
+
+==================================================
+3.10 ANIMATION SYSTEM
+==================================================
+
+Three animation levels:
+
+LEVEL 1 — MICRO INTERACTIONS
+Use CSS.
+
+Duration:
+150–300ms
+
+Examples:
+- Button hover
+- Card hover
+- Icon movement
+- Small transforms
+
+
+LEVEL 2 — COMPONENT ANIMATIONS
+Use GSAP + ScrollTrigger.
+
+Typical animation:
+opacity: 0 → 1
+y: 30 → 0
+duration: 0.7–0.9s
+
+Use staggered entrances for groups of elements.
+
+Typical stagger:
+0.1s
+
+
+LEVEL 3 — SHOWCASE ANIMATIONS
+Use GSAP timelines.
+
+Examples:
+- Workflow visualization
+- SVG path drawing
+- Parallax
+- Counter animations
+- Complex hero animations
+- Multi-step visual sequences
+
+
+Animation principles:
+- Motion should support hierarchy and storytelling.
+- Avoid unnecessary animation.
+- Avoid animating layout-heavy properties when possible.
+- Prefer transform and opacity.
+- Respect prefers-reduced-motion.
+- Reduce animation complexity on mobile.
+
+
+==================================================
+4. PAGE STRUCTURE
+==================================================
+
+Main page structure:
+
+Navbar
+Hero
+TrustBar
+ProblemSection
+ServicesSection
+WorkflowSection
+FeaturesSection
+ResultsSection
+ProcessSection
+TestimonialsSection
+FAQSection
+CTASection
+Footer
+
+
+==================================================
+5. WIREFRAME
+==================================================
+
+5.1 GLOBAL PAGE WIREFRAME
+-------------------------
+
+------------------------------------------------
+|                    NAVBAR                    |
+------------------------------------------------
+|                                              |
+|                     HERO                     |
+|                                              |
+------------------------------------------------
+|                  TRUST BAR                   |
+------------------------------------------------
+|                                              |
+|                   PROBLEM                    |
+|                                              |
+------------------------------------------------
+|                                              |
+|                  SERVICES                    |
+|                                              |
+------------------------------------------------
+|                                              |
+|               AI WORKFLOW                    |
+|                                              |
+------------------------------------------------
+|                                              |
+|              FEATURE BENTO                  |
+|                                              |
+------------------------------------------------
+|                                              |
+|                   RESULTS                    |
+|                                              |
+------------------------------------------------
+|                                              |
+|                   PROCESS                    |
+|                                              |
+------------------------------------------------
+|                                              |
+|                TESTIMONIALS                  |
+|                                              |
+------------------------------------------------
+|                                              |
+|                     FAQ                      |
+|                                              |
+------------------------------------------------
+|                                              |
+|                  FINAL CTA                   |
+|                                              |
+------------------------------------------------
+|                   FOOTER                     |
+------------------------------------------------
+
+
+==================================================
+6. NAVBAR
+==================================================
+
+Purpose:
+Provide simple navigation and a strong brand entry point.
+
+Desktop:
+
+NEXORA
+
+Solutions
+Process
+Results
+About
+
+                           Let's Talk →
+
+Behavior:
+- Sticky
+- Initially transparent
+- Darker background after scrolling
+- Backdrop blur
+- Subtle bottom border
+- Slightly reduced height after scrolling
+- Smooth transition
+
+Mobile:
+NEXORA                                  Menu
+
+Mobile menu:
+- Full-width or fullscreen overlay
+- Smooth entrance animation
+- Large touch-friendly links
+- CTA included
+
+
+==================================================
+7. HERO SECTION
+==================================================
+
+Eyebrow:
+AI AUTOMATION STUDIO
+
+Main headline:
+Automate the work.
+Accelerate the future.
+
+Supporting text:
+Build intelligent systems that work while your team focuses on what matters.
+
+Primary CTA:
+Start a Project →
+
+Secondary CTA:
+Explore Solutions
+
+Desktop layout:
+- Two-column layout
+- Approximately 50% text
+- Approximately 50% visual
+
+Mobile layout:
+Text
+↓
+CTA
+↓
+Dashboard visual
+
+Hero visual:
+Create an AI automation dashboard mockup.
+
+Concept:
+
++---------------------------------------+
+| NEXORA AI                             |
+|                                       |
+| Customer Request                      |
+|        ↓                              |
+| AI Agent                              |
+|        ↓                              |
+| Analyze                               |
+|        ↓                              |
+| Generate Response                     |
+|        ↓                              |
+| CRM Updated ✓                         |
+|                                       |
+|              ● ● ●                    |
++---------------------------------------+
+
+The dashboard should not feel static.
+
+Possible animated elements:
+- Floating cards
+- Glowing nodes
+- Connection lines
+- Status indicators
+- Animated values
+- Small UI transitions
+- Parallax layers
+
+Hero should be the strongest visual section of the entire landing page.
+
+
+==================================================
+8. TRUST BAR
+==================================================
+
+Purpose:
+Build credibility immediately below the hero.
+
+Structure:
+
+TRUSTED BY FORWARD-THINKING TEAMS
+
+LOGO   LOGO   LOGO   LOGO   LOGO
+
+Use fictional brand names/logos because NEXORA is a fictional portfolio project.
+
+Keep the section visually subtle.
+
+
+==================================================
+9. PROBLEM SECTION
+==================================================
+
+Eyebrow:
+THE PROBLEM
+
+Heading:
+Your business shouldn't run on repetitive work.
+
+Three cards:
+
+1. Manual Processes
+Hours disappear into repetitive tasks.
+
+2. Fragmented Tools
+Your team jumps between disconnected systems.
+
+3. Slow Decisions
+Important information gets buried in workflows.
+
+Layout:
+Three-column desktop layout.
+One-column mobile layout.
+
+
+==================================================
+10. SERVICES SECTION
+==================================================
+
+Eyebrow:
+OUR SOLUTIONS
+
+Heading:
+Systems built to work for you.
+
+Use a Bento Grid.
+
+Services:
+
+1. AI Agents
+Custom intelligent agents for business operations.
+
+2. Workflow Automation
+Automate repetitive and multi-step processes.
+
+3. Intelligent Workflows
+Connect triggers, decisions, AI, and actions.
+
+4. Data Intelligence
+Turn business data into useful decisions.
+
+5. Custom Integrations
+Connect existing business tools and systems.
+
+Suggested visual layout:
+
++----------------------+----------------------+
+|                      |                      |
+|      AI AGENTS       |     AUTOMATION       |
+|                      |                      |
++----------------------+----------------------+
+|                                             |
+|          INTELLIGENT WORKFLOWS              |
+|                                             |
++----------------------+----------------------+
+|                      |                      |
+|   DATA INTELLIGENCE  |    INTEGRATIONS      |
+|                      |                      |
++----------------------+----------------------+
+
+
+==================================================
+11. AI WORKFLOW SECTION
+==================================================
+
+Eyebrow:
+HOW IT WORKS
+
+Heading:
+From trigger to outcome. Automatically.
+
+Main visualization:
+
+○────────○────────○────────○────────○
+│        │        │        │        │
+Trigger Analyze   AI     Decision   Result
+                  Agent
+
+The workflow should visually communicate automation.
+
+Animation strategy:
+- Nodes appear sequentially.
+- Connecting SVG line draws itself.
+- Active node glows.
+- Data/status indicators move along the path.
+- Use GSAP ScrollTrigger.
+- Use GSAP timelines.
+- SVG stroke-dasharray/stroke-dashoffset can be used for path drawing.
+
+
+==================================================
+12. FEATURE BENTO SECTION
+==================================================
+
+Purpose:
+Show advanced product capabilities through a visual grid.
+
+Possible cards:
+
+24/7 AI Agents
+Automated Analytics
+Smart Decisions
+Custom Integrations
+Business Intelligence
+Scalable Systems
+
+Layout:
+Large feature cards mixed with smaller cards.
+
+Design:
+- Dark surfaces
+- Subtle borders
+- Purple/cyan accents
+- Small animated visual elements
+- Avoid excessive text
+
+
+==================================================
+13. RESULTS SECTION
+==================================================
+
+Eyebrow:
+RESULTS
+
+Heading:
+Automation you can measure.
+
+Four statistics:
+
++72%
+Operational Efficiency
+
+-41%
+Manual Work
+
+24/7
+Automated Operations
+
+3.2x
+Faster Response
+
+Animation:
+When the section enters the viewport, numbers animate from an initial value to the final value.
+
+Implementation:
+GSAP counter animation + ScrollTrigger.
+
+Example:
+0 → 72
+0 → 41
+0 → 24
+0 → 3.2
+
+
+==================================================
+14. PROCESS SECTION
+==================================================
+
+Eyebrow:
+OUR PROCESS
+
+Four stages:
+
+01 — DISCOVER
+Understand the business and identify opportunities.
+
+02 — DESIGN
+Plan the system and user/workflow experience.
+
+03 — BUILD
+Develop and integrate the automation system.
+
+04 — OPTIMIZE
+Measure performance and continuously improve.
+
+Desktop:
+
+01 ───── 02 ───── 03 ───── 04
+
+Mobile:
+
+01
+│
+02
+│
+03
+│
+04
+
+Optional animation:
+- Timeline progress
+- Active step highlight
+- Step reveal on scroll
+
+
+==================================================
+15. TESTIMONIALS SECTION
+==================================================
+
+Eyebrow:
+CLIENT STORIES
+
+Three testimonial cards.
+
+Example:
+
+★★★★★
+
+"Nexora completely changed how our team operates."
+
+Alex Morgan
+CEO, Vertex
+
+Second:
+★★★★★
+
+"We eliminated hours of repetitive work every week."
+
+Sarah Chen
+Founder, Nova
+
+Third:
+★★★★★
+
+"Our team can finally focus on high-value decisions."
+
+David Ross
+COO, Orbit
+
+Interactions:
+- Subtle card hover
+- Small image/avatar movement if avatars are used
+- Optional subtle tilt
+- No excessive 3D effects
+
+
+==================================================
+16. FAQ SECTION
+==================================================
+
+Questions:
+
+What kind of processes can you automate?
+
+How long does implementation take?
+
+Can you integrate with our existing tools?
+
+Do you build custom AI agents?
+
+How do we get started?
+
+Layout:
+
++--------------------------------------------+
+| What can you automate?                  +  |
++--------------------------------------------+
+| How long does implementation take?      +  |
++--------------------------------------------+
+| Can you integrate existing tools?       +  |
++--------------------------------------------+
+| Do you build custom AI agents?           +  |
++--------------------------------------------+
+| How do we get started?                   +  |
++--------------------------------------------+
+
+Interaction:
+- Vue state
+- Accordion
+- Smooth height/opacity animation
+- Accessible keyboard behavior
+
+
+==================================================
+17. FINAL CTA SECTION
+==================================================
+
+Heading:
+Ready to automate what’s holding you back?
+
+Supporting text:
+Let's build your system.
+
+CTA:
+Start a Project →
+
+Visual:
+- Large dark area
+- Purple radial glow
+- Optional cyan secondary glow
+- Subtle animated background
+- Strong whitespace
+
+This section should create a strong final conversion point.
+
+
+==================================================
+18. FOOTER
+==================================================
+
+Brand:
+NEXORA
+
+Description:
+AI Automation for modern businesses.
+
+Navigation:
+Solutions
+Process
+Results
+About
+
+Social:
+LinkedIn
+X
+Instagram
+
+Copyright:
+© 2026 Nexora
+
+
+==================================================
+19. NUXT COMPONENT ARCHITECTURE
+==================================================
+
+Recommended structure:
+
+components/
+|
+├── layout/
+│   ├── Navbar.vue
+│   └── Footer.vue
+|
+├── sections/
+│   ├── HeroSection.vue
+│   ├── TrustBar.vue
+│   ├── ProblemSection.vue
+│   ├── ServicesSection.vue
+│   ├── WorkflowSection.vue
+│   ├── FeaturesSection.vue
+│   ├── ResultsSection.vue
+│   ├── ProcessSection.vue
+│   ├── TestimonialsSection.vue
+│   ├── FAQSection.vue
+│   └── CTASection.vue
+|
+└── ui/
+    ├── Button.vue
+    ├── Badge.vue
+    ├── SectionHeading.vue
+    ├── GlassCard.vue
+    └── GlowOrb.vue
+
+pages/
+└── index.vue
+
+
+==================================================
+20. INDEX PAGE COMPOSITION
+==================================================
+
+The index page should primarily compose sections:
+
+<template>
+  <main>
+    <Navbar />
+
+    <HeroSection />
+    <TrustBar />
+    <ProblemSection />
+    <ServicesSection />
+    <WorkflowSection />
+    <FeaturesSection />
+    <ResultsSection />
+    <ProcessSection />
+    <TestimonialsSection />
+    <FAQSection />
+    <CTASection />
+
+    <Footer />
+  </main>
+</template>
+
+Avoid putting large amounts of section-specific markup directly into pages/index.vue.
+
+
+==================================================
+21. RESPONSIVE STRATEGY
+==================================================
+
+Mobile-first approach.
+
+Desktop:
+- Wide whitespace
+- 12-column grid
+- Two-column hero
+- Bento grid
+- Horizontal process timeline
+- Multi-column testimonials
+
+Tablet:
+- Reduced typography
+- Reduced spacing
+- 8-column grid
+- Simplified animations where appropriate
+
+Mobile:
+- 4-column conceptual grid
+- One-column content
+- Hero text above visual
+- Stacked cards
+- Vertical process timeline
+- Simplified decorative effects
+- Reduced animation complexity
+
+
+==================================================
+22. PERFORMANCE PRINCIPLES
+==================================================
+
+The landing page must be visually impressive without becoming unnecessarily heavy.
+
+Rules:
+- Use transform and opacity for most animations.
+- Avoid unnecessary layout-triggering animations.
+- Lazy-load non-critical assets.
+- Optimize images.
+- Avoid excessive DOM complexity.
+- Avoid unnecessary JavaScript.
+- Keep reusable components lightweight.
+- Reduce animation complexity on mobile.
+- Respect prefers-reduced-motion.
+- Keep decorative effects visually subtle.
+
+
+==================================================
+23. ACCESSIBILITY
+==================================================
+
+Requirements:
+- Semantic HTML
+- Proper heading hierarchy
+- Keyboard-accessible navigation
+- Accessible buttons
+- Accessible accordion
+- Visible focus states
+- Sufficient text contrast
+- Meaningful aria-labels where necessary
+- Respect prefers-reduced-motion
+- Do not rely only on color to communicate status
+
+
+==================================================
+24. SEO FOUNDATION
+==================================================
+
+Suggested page title:
+Nexora — AI Automation for Modern Businesses
+
+Suggested description:
+Nexora builds intelligent AI automation systems that help modern businesses eliminate repetitive work, connect their tools, and operate more efficiently.
+
+Use:
+- Proper H1
+- Logical H2/H3 hierarchy
+- Semantic sections
+- Open Graph metadata
+- Favicon
+- Canonical URL when deployed
+
+
+==================================================
+25. DEVELOPMENT ROADMAP
+==================================================
+
+PHASE 01 — DESIGN SYSTEM
+
+- Colors
+- Typography
+- Spacing
+- Container
+- Grid
+- Buttons
+- Cards
+- Badges
+- Effects
+- Animation rules
+
+
+PHASE 02 — FOUNDATION
+
+- Create Nuxt project
+- Configure TailwindCSS
+- Configure TypeScript
+- Install/configure GSAP
+- Configure fonts
+- Create global CSS variables
+- Create base UI components
+- Establish folder architecture
+
+
+PHASE 03 — CORE SECTIONS
+
+- Navbar
+- Hero
+- TrustBar
+- Problem
+- Services
+
+
+PHASE 04 — SHOWCASE SECTIONS
+
+- Workflow
+- Feature Bento
+- Results
+- Process
+
+
+PHASE 05 — CONVERSION SECTIONS
+
+- Testimonials
+- FAQ
+- Final CTA
+- Footer
+
+
+PHASE 06 — POLISH
+
+- GSAP animations
+- Micro-interactions
+- Responsive refinement
+- Accessibility
+- SEO
+- Performance optimization
+
+
+PHASE 07 — DEPLOYMENT
+
+- Git repository
+- Production build
+- Free hosting deployment
+- Domain configuration if needed
+- Final portfolio presentation
+
+
+==================================================
+26. CORE DESIGN PHILOSOPHY
+==================================================
+
+The project should follow this principle:
+
+Wireframe tells us WHAT to build.
+
+Design System tells us HOW it should look.
+
+Component Architecture tells us HOW the code is organized.
+
+GSAP tells us HOW the interface comes to life.
+
+The final result should look like a real commercial landing page, not a tutorial project.
+
+Primary objective:
+Demonstrate DevHeshmati's ability to design and develop premium, conversion-focused landing pages using Nuxt, TailwindCSS, TypeScript, and GSAP.
+
+
+==================================================
+END OF SPECIFICATION
+==================================================
