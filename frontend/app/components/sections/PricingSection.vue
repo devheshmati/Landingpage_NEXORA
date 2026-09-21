@@ -1,23 +1,18 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from "vue";
 
-// 1. تعداد فرایندها در ماه (۱۰ تا ۱,۰۰۰)
 const taskCount = ref(250);
 
-// 2. هزینه/حقوق ساعتی نیروی انسانی بر حسب دلار (۱۰$ تا ۱۵۰$)
 const hourlyRate = ref(25);
 
-// هر task حدود ۱۰ دقیقه (0.166 ساعت) زمان می‌برد. AI حدود ۸۵٪ این زمان را آزاد می‌کند.
 const monthlyHoursSaved = computed(() =>
   Math.round(taskCount.value * (10 / 60) * 0.85),
 );
 
-// صرفه‌جویی ماهانه = (ساعات آزاد شده در ماه) × (هزینه ساعتی نیروی انسانی)
 const monthlySavings = computed(
   () => monthlyHoursSaved.value * hourlyRate.value,
 );
 
-// صرفه‌جویی سالانه
 const annualSavings = computed(() => monthlySavings.value * 12);
 
 const calculatorContainerRef = ref<HTMLElement | null>(null);
@@ -192,10 +187,6 @@ onUnmounted(() => {
               <span class="text-green-400">✓</span> Dedicated API Connector
               Setup
             </div>
-          </div>
-
-          <div class="pt-4">
-            <UiButton class="w-full"> Claim Enterprise ROI Audit </UiButton>
           </div>
         </UiGlassCard>
       </div>
