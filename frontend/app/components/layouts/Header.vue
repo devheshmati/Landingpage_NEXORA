@@ -43,6 +43,9 @@ onUnmounted(() => {
         <NuxtLink to="/" class="hover:text-main-text transition-colors"
           >Home</NuxtLink
         >
+        <NuxtLink to="/docs" class="hover:text-main-text transition-colors"
+          >Docs</NuxtLink
+        >
         <a href="#services" class="hover:text-main-text transition-colors"
           >Solutions</a
         >
