@@ -40,6 +40,9 @@ onUnmounted(() => {
       <nav
         class="hidden md:flex items-center gap-8 text-sm font-medium text-muted-text"
       >
+        <NuxtLink to="/" class="hover:text-main-text transition-colors"
+          >Home</NuxtLink
+        >
         <a href="#services" class="hover:text-main-text transition-colors"
           >Solutions</a
         >
@@ -49,8 +52,8 @@ onUnmounted(() => {
         <a href="#results" class="hover:text-main-text transition-colors"
           >Results</a
         >
-        <a href="#about" class="hover:text-main-text transition-colors"
-          >About</a
+        <NuxtLink to="about" class="hover:text-main-text transition-colors"
+          >About</NuxtLink
         >
       </nav>
 

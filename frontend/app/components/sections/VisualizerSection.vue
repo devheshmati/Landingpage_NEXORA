@@ -112,6 +112,7 @@ const scenarios: Scenario[] = [
 
 const activeScenarioId = ref("support");
 const sectionRef = ref<HTMLElement | null>(null);
+const scenarioFrame = ref<HTMLElement | null>(null);
 const nodesGridRef = ref<HTMLElement | null>(null);
 
 let ctx: any = null;
@@ -151,6 +152,25 @@ onMounted(() => {
 
   ctx = $gsap.context(() => {
     const cards = Array.from(nodesGridRef.value.children);
+    const frameEl = scenarioFrame.value?.$el || scenarioFrame.value;
+
+    $gsap.set(frameEl, {
+      opacity: 0,
+      y: 10,
+    });
+
+    $gsap.to(frameEl, {
+      scrollTrigger: {
+        trigger: frameEl,
+        start: "top 80%",
+        end: "top 80%",
+        toggleActions: "play none reverse reverse",
+      },
+      opacity: 1,
+      y: 0,
+      duration: 0.5,
+      ease: "power3.out",
+    });
 
     $gsap.set(cards, { opacity: 0, y: 100 });
 
@@ -219,6 +239,7 @@ onUnmounted(() => {
 
       <!-- Pipeline Visualization Canvas -->
       <UiGlassCard
+        ref="scenarioFrame"
         class="p-6 md:p-10 border-ui-border/80 relative overflow-hidden"
       >
         <!-- Execution Status Bar -->
