@@ -9,7 +9,7 @@
             class="text-xl font-mono font-bold tracking-wider text-main-text flex items-center gap-2"
           >
             <span class="w-2.5 h-2.5 rounded-full bg-primary" />
-            NEXUS<span class="text-primary-light">.AI</span>
+            NEXORA<span class="text-primary-light">.AI</span>
           </NuxtLink>
           <p class="text-muted-text text-sm leading-relaxed">
             Autonomous AI agent infrastructure for enterprise workflows.

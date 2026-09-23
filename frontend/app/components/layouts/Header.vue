@@ -52,7 +52,7 @@ onUnmounted(() => {
         <a href="#results" class="hover:text-main-text transition-colors"
           >Results</a
         >
-        <NuxtLink to="about" class="hover:text-main-text transition-colors"
+        <NuxtLink to="/about" class="hover:text-main-text transition-colors"
           >About</NuxtLink
         >
       </nav>
