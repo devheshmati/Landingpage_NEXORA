@@ -14,8 +14,9 @@ const handleScroll = () => {
 
 // nav links
 const landingPageSectionLink = [
-  { name: "Features", href: "#features" },
+  { name: "Services", href: "#services" },
   { name: "Workflow", href: "#workflow" },
+  { name: "Results", href: "#results" },
   { name: "Pricing", href: "#pricing" },
 ];
 
@@ -56,14 +57,6 @@ onUnmounted(() => {
       <nav
         class="hidden md:flex items-center gap-8 text-sm font-medium text-muted-text"
       >
-        <NuxtLink
-          v-for="link in mainPages"
-          :to="link.path"
-          class="hover:text-main-text transition-colors"
-        >
-          {{ link.name }}
-        </NuxtLink>
-
         <a
           v-if="isHomePage"
           v-for="link in landingPageSectionLink"
@@ -72,6 +65,14 @@ onUnmounted(() => {
         >
           {{ link.name }}
         </a>
+
+        <NuxtLink
+          v-for="link in mainPages"
+          :to="link.path"
+          class="hover:text-main-text transition-colors"
+        >
+          {{ link.name }}
+        </NuxtLink>
       </nav>
 
       <!-- Desktop CTA Button -->

@@ -39,7 +39,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section id="process" class="py-section relative overflow-hidden">
+  <section id="workflow" class="py-section relative overflow-hidden">
     <!-- Ambient Background Glow -->
     <div
       class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/10 rounded-full blur-[140px] pointer-events-none"
