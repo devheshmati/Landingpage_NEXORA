@@ -2,9 +2,8 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 useSeoMeta({
-  title: "Architecture & System Integrity — NEXORA",
-  description:
-    "Explore the technical pillars, security architecture, and deterministic execution models powering NEXORA enterprise AI workflows.",
+  title: "About Architecture",
+  description: "Learn about NEXORA autonomous workflow orchestration engine.",
 });
 
 const pillars = [

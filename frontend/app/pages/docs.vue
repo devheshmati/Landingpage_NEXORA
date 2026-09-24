@@ -2,9 +2,22 @@
 import { ref, computed, onMounted, onUnmounted } from "vue";
 
 useSeoMeta({
-  title: "Developer Documentation & API — NEXORA",
+  title: "Documentation & API Reference",
   description:
-    "Integrate NEXORA autonomous agent pipelines into your applications using our high-throughput gRPC, REST, and SDK interfaces.",
+    "Explore technical documentation, architecture guides, API endpoints, and SDK references for orchestrating NEXORA autonomous AI workflows.",
+
+  // Open Graph
+  ogTitle: "NEXORA Documentation — Developer & API Guides",
+  ogDescription:
+    "Comprehensive technical reference and integration guides for deterministic AI agent workflows.",
+  ogImage: "/og-docs.jpg",
+  ogType: "article",
+
+  // Twitter / X
+  twitterCard: "summary_large_image",
+  twitterTitle: "NEXORA Documentation — Developer & API Guides",
+  twitterDescription:
+    "Comprehensive technical reference and integration guides for deterministic AI agent workflows.",
 });
 
 const activeTab = ref<"typescript" | "python" | "curl">("typescript");

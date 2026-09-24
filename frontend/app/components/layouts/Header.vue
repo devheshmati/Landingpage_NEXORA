@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
+
+const route = useRoute();
+
+const isHomePage = computed(() => route.path === "/");
 
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);
@@ -7,6 +11,18 @@ const isMobileMenuOpen = ref(false);
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 20;
 };
+
+// nav links
+const landingPageSectionLink = [
+  { name: "Features", href: "#features" },
+  { name: "Workflow", href: "#workflow" },
+  { name: "Pricing", href: "#pricing" },
+];
+
+const mainPages = [
+  { name: "About", path: "/about" },
+  { name: "Docs", path: "/docs" },
+];
 
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
@@ -40,24 +56,22 @@ onUnmounted(() => {
       <nav
         class="hidden md:flex items-center gap-8 text-sm font-medium text-muted-text"
       >
-        <NuxtLink to="/" class="hover:text-main-text transition-colors"
-          >Home</NuxtLink
+        <NuxtLink
+          v-for="link in mainPages"
+          :to="link.path"
+          class="hover:text-main-text transition-colors"
         >
-        <NuxtLink to="/docs" class="hover:text-main-text transition-colors"
-          >Docs</NuxtLink
+          {{ link.name }}
+        </NuxtLink>
+
+        <a
+          v-if="isHomePage"
+          v-for="link in landingPageSectionLink"
+          :href="link.href"
+          class="hover:text-main-text transition-colors"
         >
-        <a href="#services" class="hover:text-main-text transition-colors"
-          >Solutions</a
-        >
-        <a href="#process" class="hover:text-main-text transition-colors"
-          >Process</a
-        >
-        <a href="#results" class="hover:text-main-text transition-colors"
-          >Results</a
-        >
-        <NuxtLink to="/about" class="hover:text-main-text transition-colors"
-          >About</NuxtLink
-        >
+          {{ link.name }}
+        </a>
       </nav>
 
       <!-- Desktop CTA Button -->
