@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from "vue";
 
+const { openModal } = useContactModal();
+
 const route = useRoute();
 
 const isHomePage = computed(() => route.path === "/");
@@ -15,9 +17,7 @@ const handleScroll = () => {
 // nav links
 const landingPageSectionLink = [
   { name: "Services", href: "#services" },
-  { name: "Workflow", href: "#workflow" },
   { name: "Results", href: "#results" },
-  { name: "Pricing", href: "#pricing" },
 ];
 
 const mainPages = [
@@ -77,7 +77,11 @@ onUnmounted(() => {
 
       <!-- Desktop CTA Button -->
       <div class="hidden md:block">
-        <UiButton variant="primary" class="!h-10 !px-5 !text-sm">
+        <UiButton
+          variant="primary"
+          class="!h-10 !px-5 !text-sm"
+          @click="openModal"
+        >
           Let's Talk →
         </UiButton>
       </div>

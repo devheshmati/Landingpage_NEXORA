@@ -1,9 +1,16 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 
+const { openModal } = useContactModal();
+
 const { $gsap } = useNuxtApp();
 const contentRef = ref(null);
 const visualRef = ref(null);
+
+const scrollToSolutions = () => {
+  const el = document.getElementById("services");
+  el?.scrollIntoView({ behavior: "smooth" });
+};
 
 onMounted(() => {
   if (!$gsap) return;
@@ -61,8 +68,12 @@ onMounted(() => {
           </p>
 
           <div class="flex flex-wrap gap-4 pt-4">
-            <UiButton variant="primary"> Start a Project → </UiButton>
-            <UiButton variant="secondary"> Explore Solutions </UiButton>
+            <UiButton variant="primary" @click="openModal">
+              Start a Project →
+            </UiButton>
+            <UiButton variant="secondary" @click="scrollToSolutions">
+              Explore Solutions
+            </UiButton>
           </div>
         </div>
 

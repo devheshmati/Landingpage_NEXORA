@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, nextTick } from "vue";
 
+const { openModal } = useContactModal();
+
 const ctaCardRef = ref<HTMLElement | null>(null);
 let ctx: gsap.Context | null = null;
 
@@ -62,8 +64,14 @@ onUnmounted(() => {
           <div
             class="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10"
           >
-            <UiButton size="lg"> Schedule Technical Audit </UiButton>
-            <UiButton variant="outline" size="lg">
+            <UiButton size="lg" @click="openModal">
+              Schedule Technical Audit
+            </UiButton>
+            <UiButton
+              variant="secondary"
+              size="lg"
+              @click="navigateTo('/docs')"
+            >
               Read Documentation
             </UiButton>
           </div>

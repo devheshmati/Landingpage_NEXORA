@@ -1,3 +1,9 @@
+<script setup lang="ts">
+const currentYear = new Date().getFullYear();
+const route = useRoute();
+const isHomePage = computed(() => route.path === "/");
+</script>
+
 <template>
   <footer class="border-t border-ui-border/60 bg-black/40 relative z-10">
     <div class="container mx-auto px-6 py-12 md:py-16">
@@ -24,27 +30,31 @@
             Architecture
           </h4>
           <ul class="space-y-2 text-sm text-muted-text">
-            <li>
-              <NuxtLink
-                to="#features"
-                class="hover:text-main-text transition-colors"
-                >Core Engine</NuxtLink
-              >
-            </li>
-            <li>
-              <NuxtLink
-                to="#process"
-                class="hover:text-main-text transition-colors"
-                >Pipeline Workflow</NuxtLink
-              >
-            </li>
-            <li>
+            <li v-if="isHomePage">
               <NuxtLink
                 to="#services"
                 class="hover:text-main-text transition-colors"
-                >Integrations</NuxtLink
               >
+                Core Engine
+              </NuxtLink>
             </li>
+            <li v-if="isHomePage">
+              <NuxtLink
+                to="#workflow"
+                class="hover:text-main-text transition-colors"
+              >
+                Pipeline Workflow
+              </NuxtLink>
+            </li>
+            <li v-if="isHomePage">
+              <NuxtLink
+                to="#services"
+                class="hover:text-main-text transition-colors"
+              >
+                Integrations
+              </NuxtLink>
+            </li>
+            <NuxtLink v-if="!isHomePage" to="/">Home</NuxtLink>
           </ul>
         </div>
 
@@ -57,19 +67,12 @@
           </h4>
           <ul class="space-y-2 text-sm text-muted-text">
             <li>
-              <a href="#" class="hover:text-main-text transition-colors"
-                >API Reference</a
+              <NuxtLink
+                to="/docs"
+                class="hover:text-main-text transition-colors"
               >
-            </li>
-            <li>
-              <a href="#" class="hover:text-main-text transition-colors"
-                >Security Audit</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-main-text transition-colors"
-                >System Status</a
-              >
+                API Reference
+              </NuxtLink>
             </li>
           </ul>
         </div>
@@ -101,16 +104,17 @@
       <div
         class="mt-12 pt-6 border-t border-ui-border/40 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-text"
       >
-        <p>
-          © {{ new Date().getFullYear() }} NEXUS AI Inc. All rights reserved.
-        </p>
+        <p>© {{ currentYear }} NEXORA AI Inc. All rights reserved.</p>
         <div class="flex gap-6">
-          <a href="#" class="hover:text-main-text transition-colors"
-            >Privacy Policy</a
+          <NuxtLink
+            to="/privacy"
+            class="hover:text-main-text transition-colors"
           >
-          <a href="#" class="hover:text-main-text transition-colors"
-            >Terms of Service</a
-          >
+            Privacy Policy
+          </NuxtLink>
+          <NuxtLink to="/terms" class="hover:text-main-text transition-colors">
+            Terms of Service
+          </NuxtLink>
         </div>
       </div>
     </div>

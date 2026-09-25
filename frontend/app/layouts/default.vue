@@ -5,5 +5,8 @@
     <LayoutsHeader />
     <slot />
     <LayoutsFooter />
+
+    <!-- contact modal is access in hole sections -->
+    <ContactModal />
   </div>
 </template>
