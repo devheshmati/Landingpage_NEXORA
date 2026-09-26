@@ -9,6 +9,7 @@ const visualRef = ref(null);
 
 const scrollToSolutions = () => {
   const el = document.getElementById("services");
+  // el?.scrollIntoView({ behavior: "smooth" });
   el?.scrollIntoView({ behavior: "smooth" });
 };
 
