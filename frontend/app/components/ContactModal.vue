@@ -27,34 +27,28 @@ const handleSubmit = async () => {
   errorMessage.value = "";
 
   try {
-    const response = await $fetch<{ success: boolean; message: string }>(
-      "https://api.web3forms.com/submit",
-      {
-        method: "POST",
-        body: {
-          access_key: "db16d4b4-80dd-4ba8-8141-0e1061538131",
-          name: form.value.name,
-          email: form.value.email,
-          service: form.value.service,
-          message: form.value.message,
-          subject: `New Lead from NEXORA: ${form.value.name}`,
-        },
+    const response = await $fetch<{ success: boolean }>("/api/contact", {
+      method: "POST",
+      body: {
+        name: form.value.name,
+        email: form.value.email,
+        service: form.value.service,
+        message: form.value.message,
       },
-    );
+    });
 
     if (response.success) {
       submitted.value = true;
       form.value = {
         name: "",
         email: "",
-        service: "Web Development",
+        service: "Noxvera AI Services",
         message: "",
       };
-    } else {
-      errorMessage.value = "An error occurred, please try again!";
     }
-  } catch (error) {
-    errorMessage.value = "Failed to connect to the server!";
+  } catch (error: any) {
+    errorMessage.value =
+      error.data?.statusMessage || "An unexpected error occurred.";
   } finally {
     loading.value = false;
   }
