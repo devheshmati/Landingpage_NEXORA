@@ -1,0 +1,2 @@
+const interopDefault=e=>e.default||e||[],e={"pages/about.vue":()=>import("../build/about-styles.OQkuxkMB.mjs").then(interopDefault),"pages/docs.vue":()=>import("../build/docs-styles.DHkY4pX2.mjs").then(interopDefault),"../node_modules/nuxt/dist/app/components/error-404.vue":()=>import("../build/error-404-styles.CbLQIMfl.mjs").then(interopDefault),"../node_modules/nuxt/dist/app/components/error-500.vue":()=>import("../build/error-500-styles.CB5z51D_.mjs").then(interopDefault)};export{e as default};
+//# sourceMappingURL=styles.mjs.map

@@ -3,11 +3,12 @@ const { isOpen, closeModal } = useContactModal();
 
 const loading = ref(false);
 const submitted = ref(false);
+const errorMessage = ref("");
 
-const form = reactive({
+const form = ref({
   name: "",
   email: "",
-  service: "full-project",
+  service: "AI Services",
   message: "",
 });
 
@@ -23,17 +24,51 @@ onMounted(() => {
 
 const handleSubmit = async () => {
   loading.value = true;
+  errorMessage.value = "";
 
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  loading.value = false;
-  submitted.value = true;
+  try {
+    const response = await $fetch<{ success: boolean; message: string }>(
+      "https://api.web3forms.com/submit",
+      {
+        method: "POST",
+        body: {
+          access_key: "db16d4b4-80dd-4ba8-8141-0e1061538131",
+          name: form.value.name,
+          email: form.value.email,
+          service: form.value.service,
+          message: form.value.message,
+          subject: `New Lead from NEXORA: ${form.value.name}`,
+        },
+      },
+    );
+
+    if (response.success) {
+      submitted.value = true;
+      form.value = {
+        name: "",
+        email: "",
+        service: "Web Development",
+        message: "",
+      };
+    } else {
+      errorMessage.value = "An error occurred, please try again!";
+    }
+  } catch (error) {
+    errorMessage.value = "Failed to connect to the server!";
+  } finally {
+    loading.value = false;
+  }
 };
 
 const handleResetAndClose = () => {
   submitted.value = false;
-  form.name = "";
-  form.email = "";
-  form.message = "";
+  errorMessage.value = "";
+  form.value = {
+    name: "",
+    email: "",
+    service: "Web Development",
+    message: "",
+  };
   closeModal();
 };
 </script>
@@ -151,6 +186,14 @@ const handleResetAndClose = () => {
                   class="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition resize-none"
                 />
               </div>
+
+              <!-- نمایش پیام خطا -->
+              <p
+                v-if="errorMessage"
+                class="text-xs text-red-400 bg-red-500/10 border border-red-500/20 rounded-xl p-3"
+              >
+                {{ errorMessage }}
+              </p>
 
               <div class="pt-2 flex items-center justify-end gap-3">
                 <UiButton
