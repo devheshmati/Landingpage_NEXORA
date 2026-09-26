@@ -8,6 +8,10 @@ let ctx: gsap.Context | null = null;
 
 const { $gsap } = useNuxtApp();
 
+async function goToDocsPage() {
+  await navigateTo("/docs");
+}
+
 onMounted(async () => {
   if (!import.meta.client) return;
   await nextTick();
@@ -67,11 +71,7 @@ onUnmounted(() => {
             <UiButton size="lg" @click="openModal">
               Schedule Technical Audit
             </UiButton>
-            <UiButton
-              variant="secondary"
-              size="lg"
-              @click="navigateTo('/docs')"
-            >
+            <UiButton variant="secondary" size="lg" @click="goToDocsPage">
               Read Documentation
             </UiButton>
           </div>
