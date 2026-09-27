@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 
-const { openModal } = useContactModal();
+const { openContactModal } = useUI();
 
 const { $gsap } = useNuxtApp();
 const contentRef = ref(null);
@@ -69,7 +69,7 @@ onMounted(() => {
           </p>
 
           <div class="flex flex-wrap gap-4 pt-4">
-            <UiButton variant="primary" @click="openModal">
+            <UiButton variant="primary" @click="openContactModal">
               Start a Project →
             </UiButton>
             <UiButton variant="secondary" @click="scrollToSolutions">

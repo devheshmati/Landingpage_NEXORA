@@ -178,6 +178,7 @@ onMounted(() => {
       scrollTrigger: {
         trigger: nodesGridRef.value,
         start: "top 80%",
+        end: "top 80%",
         toggleActions: "play none reverse reverse",
       },
       opacity: 1,

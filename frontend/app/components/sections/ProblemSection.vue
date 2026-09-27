@@ -20,7 +20,8 @@ onMounted(async () => {
     $gsap.to(cards, {
       scrollTrigger: {
         trigger: cardsGridRef.value,
-        start: "top 85%",
+        start: "top 80%",
+        end: "top 80%",
         toggleActions: "play none none reverse",
       },
       opacity: 1,

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { isOpen, closeModal } = useContactModal();
+const { isContactModalOpen, closeContactModal } = useUI();
 
 const loading = ref(false);
 const submitted = ref(false);
@@ -14,8 +14,8 @@ const form = ref({
 
 onMounted(() => {
   const handleKeydown = (e: KeyboardEvent) => {
-    if (e.key === "Escape" && isOpen.value) {
-      closeModal();
+    if (e.key === "Escape" && isContactModalOpen.value) {
+      closeContactModal();
     }
   };
   window.addEventListener("keydown", handleKeydown);
@@ -63,7 +63,7 @@ const handleResetAndClose = () => {
     service: "Web Development",
     message: "",
   };
-  closeModal();
+  closeContactModal();
 };
 </script>
 
@@ -78,12 +78,12 @@ const handleResetAndClose = () => {
       leave-to-class="opacity-0"
     >
       <div
-        v-if="isOpen"
-        class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+        v-if="isContactModalOpen"
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-[rgba(0,0,0,0.1)] z-100"
       >
         <div
           class="fixed inset-0 bg-black/75 backdrop-blur-md transition-opacity"
-          @click="closeModal"
+          @click="closeContactModal"
         />
 
         <Transition
@@ -95,7 +95,7 @@ const handleResetAndClose = () => {
           leave-to-class="opacity-0 scale-95 translate-y-4"
         >
           <div
-            v-if="isOpen"
+            v-if="isContactModalOpen"
             class="relative w-full max-w-lg bg-[#0d1322]/90 border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl z-10 overflow-hidden text-white backdrop-blur-2xl"
           >
             <div
@@ -103,7 +103,7 @@ const handleResetAndClose = () => {
             />
 
             <button
-              @click="closeModal"
+              @click="closeContactModal"
               class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl hover:bg-white/5 transition"
               aria-label="Close modal"
             >
@@ -193,7 +193,7 @@ const handleResetAndClose = () => {
                 <UiButton
                   type="button"
                   variant="secondary"
-                  @click="closeModal"
+                  @click="closeContactModal"
                   class="!py-2 !px-4 !text-xs"
                 >
                   Cancel

@@ -15,7 +15,6 @@ useSeoMeta({
     <SectionsWorkflowSection />
     <SectionsResultsSection />
     <SectionsVisualizerSection />
-    <SectionsNodeVisualizer />
     <SectionsPricingSection />
     <SectionsCTASection />
   </main>

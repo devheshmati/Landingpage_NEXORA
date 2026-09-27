@@ -45,6 +45,7 @@ onMounted(() => {
         scrollTrigger: {
           trigger: metricsContainerRef.value,
           start: "top 80%",
+          end: "top 80%",
           toggleActions: "play none reverse reverse",
         },
         val: targetVal,

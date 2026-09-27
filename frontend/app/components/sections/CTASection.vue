@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, nextTick } from "vue";
 
-const { openModal } = useContactModal();
+const { openContactModal } = useUI();
 
 const ctaCardRef = ref<HTMLElement | null>(null);
 let ctx: gsap.Context | null = null;
@@ -22,7 +22,8 @@ onMounted(async () => {
     $gsap.from(ctaCardRef.value, {
       scrollTrigger: {
         trigger: ctaCardRef.value,
-        start: "top 85%",
+        start: "top 80%",
+        end: "top 80%",
         toggleActions: "play none reverse reverse",
       },
       opacity: 0,
@@ -68,7 +69,7 @@ onUnmounted(() => {
           <div
             class="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10"
           >
-            <UiButton size="lg" @click="openModal">
+            <UiButton size="lg" @click="openContactModal">
               Schedule Technical Audit
             </UiButton>
             <UiButton variant="secondary" size="lg" @click="goToDocsPage">

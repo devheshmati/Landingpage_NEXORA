@@ -19,7 +19,8 @@ onMounted(async () => {
       scrollTrigger: {
         trigger: bentoGridRef.value,
         start: "top 80%",
-        toggleActions: "play none none reverse",
+        end: "top 80%",
+        toggleActions: "play none reverse reverse",
       },
       opacity: 1,
       y: 0,

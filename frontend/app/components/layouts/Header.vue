@@ -1,14 +1,10 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from "vue";
 
-const { openModal } = useContactModal();
-
+const { openContactModal, isMobileMenuOpen, toggleMobileMenu } = useUI();
 const route = useRoute();
-
 const isHomePage = computed(() => route.path === "/");
-
 const isScrolled = ref(false);
-const isMobileMenuOpen = ref(false);
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 20;
@@ -80,15 +76,15 @@ onUnmounted(() => {
         <UiButton
           variant="primary"
           class="!h-10 !px-5 !text-sm"
-          @click="openModal"
+          @click="openContactModal"
         >
           Let's Talk →
         </UiButton>
       </div>
 
-      <!-- Mobile Menu Toggle Button -->
+      <!-- Meobile Menu Toggle Button -->
       <UiButton
-        @click="isMobileMenuOpen = !isMobileMenuOpen"
+        @click="toggleMobileMenu"
         class="md:hidden text-main-text p-2 focus:outline-none"
         aria-label="Toggle Navigation Menu"
       >
@@ -126,41 +122,35 @@ onUnmounted(() => {
     <!-- Mobile Navigation Overlay -->
     <Transition
       enter-active-class="transition duration-300 ease-out"
-      enter-from-class="opacity-0 -translate-y-4"
-      enter-to-class="opacity-100 translate-y-0"
+      enter-from-class="opacity-0 -translate-x-4"
+      enter-to-class="opacity-100 translate-x-0"
       leave-active-class="transition duration-200 ease-in"
-      leave-from-class="opacity-100 translate-y-0"
-      leave-to-class="opacity-0 -translate-y-4"
+      leave-from-class="opacity-100 translate-x-0"
+      leave-to-class="opacity-0 -translate-x-4"
     >
       <div
         v-if="isMobileMenuOpen"
-        class="md:hidden fixed inset-x-0 top-[73px] bg-surface/95 backdrop-blur-xl border-b border-ui-border p-6 flex flex-col gap-6 shadow-2xl"
+        class="md:hidden fixed inset-x-0 top-[90px] bg-surface/95 backdrop-blur-xl border-b border-ui-border p-6 flex flex-col gap-6 shadow-2xl"
       >
         <nav class="flex flex-col gap-4 text-lg font-medium text-muted-text">
           <a
-            href="#services"
-            @click="isMobileMenuOpen = false"
+            v-if="isHomePage"
+            v-for="link in landingPageSectionLink"
+            :href="link.href"
             class="hover:text-main-text transition-colors"
-            >Solutions</a
-          >
-          <a
-            href="#process"
             @click="isMobileMenuOpen = false"
-            class="hover:text-main-text transition-colors"
-            >Process</a
           >
-          <a
-            href="#results"
+            {{ link.name }}
+          </a>
+
+          <NuxtLink
+            v-for="link in mainPages"
+            :to="link.path"
+            class="hover:text-main-text transition-colors"
             @click="isMobileMenuOpen = false"
-            class="hover:text-main-text transition-colors"
-            >Results</a
           >
-          <a
-            href="#about"
-            @click="isMobileMenuOpen = false"
-            class="hover:text-main-text transition-colors"
-            >About</a
-          >
+            {{ link.name }}
+          </NuxtLink>
         </nav>
         <div class="pt-4 border-t border-ui-border">
           <UiButton variant="primary" class="w-full"> Let's Talk → </UiButton>
