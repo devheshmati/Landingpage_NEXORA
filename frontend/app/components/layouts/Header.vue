@@ -130,7 +130,7 @@ onUnmounted(() => {
     >
       <div
         v-if="isMobileMenuOpen"
-        class="md:hidden fixed inset-x-0 top-[90px] bg-surface/95 backdrop-blur-xl border-b border-ui-border p-6 flex flex-col gap-6 shadow-2xl"
+        class="md:hidden fixed inset-x-0 top-[84px] bg-surface/95 backdrop-blur-xl border-b border-ui-border p-6 flex flex-col gap-6 shadow-2xl"
       >
         <nav class="flex flex-col gap-4 text-lg font-medium text-muted-text">
           <a
