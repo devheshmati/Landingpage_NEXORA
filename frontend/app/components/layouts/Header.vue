@@ -153,7 +153,9 @@ onUnmounted(() => {
           </NuxtLink>
         </nav>
         <div class="pt-4 border-t border-ui-border">
-          <UiButton variant="primary" class="w-full"> Let's Talk → </UiButton>
+          <UiButton variant="primary" class="w-full" @click="openContactModal">
+            Let's Talk →
+          </UiButton>
         </div>
       </div>
     </Transition>
