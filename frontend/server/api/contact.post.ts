@@ -1,17 +1,21 @@
 // server/api/contact.post.ts
 export default defineEventHandler(async (event) => {
-  const config = useRuntimeConfig(event);
+  // const config = useRuntimeConfig(event);
   const body = await readBody(event);
+
+  const endpointWeb3forms = "https://api.web3forms.com/submit";
+  const endpointFormSubmit = "https://formsubmit.co/devheshmati@gmail.com";
+  const endpoint000forms = "https://000form.com/f/devheshmati@gmail.com";
 
   const { name, email, service, message } = body;
 
   // validation
-  if (!config.web3formsAccessKey) {
-    throw createError({
-      statusCode: 500,
-      statusMessage: "Server configuration error: Access key is missing.",
-    });
-  }
+  // if (!config.web3formsAccessKey) {
+  //   throw createError({
+  //     statusCode: 500,
+  //     statusMessage: "Server configuration error: Access key is missing.",
+  //   });
+  // }
 
   // form input validation
   if (!name || !email || !message) {
@@ -23,21 +27,30 @@ export default defineEventHandler(async (event) => {
 
   try {
     const response = await $fetch<{ success: boolean; message?: string }>(
-      "https://api.web3forms.com/submit",
+      endpoint000forms,
       {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         method: "POST",
         body: {
-          access_key: config.web3formsAccessKey,
+          // access_key: config.web3formsAccessKey,
           name,
           email,
           service: service || "Web Development",
           message,
-          subject: `New Lead from NEXORA: ${name}`,
+          _subject: `New Lead from NEXORA: ${name}`,
+          _replyto: email,
+          _captcha: "false",
+          _template: "table",
         },
       },
     );
 
-    if (!response.success) {
+    const isSuccess = response.success === true || response.success === "true";
+
+    if (!isSuccess) {
       throw createError({
         statusCode: 400,
         statusMessage: response.message || "Failed to submit form.",
