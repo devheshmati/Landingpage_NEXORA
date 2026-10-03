@@ -2,7 +2,6 @@
 import { ref, onMounted } from "vue";
 
 const { openContactModal } = useUI();
-
 const { $gsap } = useNuxtApp();
 const contentRef = ref(null);
 const visualRef = ref(null);
@@ -10,7 +9,7 @@ const visualRef = ref(null);
 const scrollToSolutions = () => {
   const el = document.getElementById("services");
   // el?.scrollIntoView({ behavior: "smooth" });
-  el?.scrollIntoView({ behavior: "smooth" });
+  el?.scrollIntoView();
 };
 
 onMounted(() => {
